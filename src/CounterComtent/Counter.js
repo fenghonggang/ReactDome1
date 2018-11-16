@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { blockParams } from 'handlebars';
 
 class Counter extends Component {
     static propTypes = {
@@ -63,10 +64,16 @@ class Counter extends Component {
         console.log('render ' + this.props.caption)
         const { caption } = this.props;
         const style = {
-            margin: 10
+            margin: 10,
+            background: '#eee',
+            width: 30,
+            height: 30,
+            fontSize: '18px',
+            border: '1px solid #ccc',
+            cursor: 'pointer'
         }
         return (
-            <div style={style}>
+            <div>
                 <button style={style} onClick={this.onClickInctementButton} > + </button>
                 <button style={style} onClick={this.onClickDecrementButton} > - </button>
                 <span>

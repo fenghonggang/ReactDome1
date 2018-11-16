@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Counter from './Counter';
-import styles from "./CountorlPanel.less";
 
 // react 中 在 ES6 中新增了class，绑定的方法需要绑定 this，如果是箭头函数就不需要绑定 this
 
@@ -24,26 +23,29 @@ class ContorlPanel extends Component {
         console.log('enter ContorlPanel render')
         const { initValue } = this;
         return (
-            <div className={styles.content} style={{ width: '300px', margin: ' 0 auto' }}>
-                <Counter
-                    caption='Frist'
-                    onUpdate={this.onCounterUpdate}
-                />
-                <Counter
-                    caption='Second'
-                    initValue={initValue[1]}
-                    onUpdate={this.onCounterUpdate}
-                />
-                <Counter
-                    caption='Third'
-                    initValue={initValue[2]}
-                    onUpdate={this.onCounterUpdate}
-                />
-                {/* <button onClick={() => this.forceUpdate()}>
-                    Click me to re-render!
-                </button> */}
-                <div>
-                    Total count: {this.state.sum}
+            <div style={{ width: '1000px', margin: '50px auto', padding: '50px', }}>
+                <h1>React 实例</h1>
+                <div style={{ padding: '20px', border: '1px solid #ddd' }}>
+                    <Counter
+                        caption='Frist'
+                        onUpdate={this.onCounterUpdate}
+                    />
+                    <Counter
+                        caption='Second'
+                        initValue={initValue[1]}
+                        onUpdate={this.onCounterUpdate}
+                    />
+                    <Counter
+                        caption='Third'
+                        initValue={initValue[2]}
+                        onUpdate={this.onCounterUpdate}
+                    />
+                    {/* <button onClick={() => this.forceUpdate()}>
+                        Click me to re-render!
+                    </button> */}
+                    <div>
+                        Total count: {this.state.sum}
+                    </div>
                 </div>
             </div>
         )
