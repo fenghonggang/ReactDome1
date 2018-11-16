@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Counter from './Counter';
+import styles from "./CountorlPanel.less";
 
 // react 中 在 ES6 中新增了class，绑定的方法需要绑定 this，如果是箭头函数就不需要绑定 this
 
@@ -23,7 +24,7 @@ class ContorlPanel extends Component {
         console.log('enter ContorlPanel render')
         const { initValue } = this;
         return (
-            <div>
+            <div className={styles.content} style={{ width: '300px', margin: ' 0 auto' }}>
                 <Counter
                     caption='Frist'
                     onUpdate={this.onCounterUpdate}
